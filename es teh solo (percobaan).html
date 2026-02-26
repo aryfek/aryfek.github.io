@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teh Solo</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    text-align:center;
+    background:#f2f2f2;
+    margin:0;
+}
+
+header{
+    background:#2d6a4f;
+    color:white;
+    padding:20px;
+}
+
+.welcome{
+    margin:20px;
+}
+
+.btn-order{
+    background:#ffb703;
+    padding:10px 20px;
+    text-decoration:none;
+    color:black;
+    border-radius:8px;
+    font-weight:bold;
+}
+
+.menu-container{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    padding:20px;
+}
+
+.menu{
+    width:260px;
+    padding:15px;
+    border-radius:15px;
+    color:white;
+}
+
+.menu img{
+    width:100%;
+    height:150px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.price{
+    font-weight:bold;
+    margin:5px 0;
+}
+
+.total{
+    margin:5px 0;
+    font-weight:bold;
+}
+
+.menu button{
+    padding:8px;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+    margin-top:5px;
+}
+
+.mini{background:#1d3557;}
+.besar{background:#457b9d;}
+.leci{background:#e63946;}
+.lemon{background:#ffb703; color:black;}
+.madu{background:#8d6e63;}
+
+.menu button{
+    background:white;
+    color:black;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>Es Teh Solo</h1>
+</header>
+
+<div class="welcome">
+<h2>Selamat datang di Es Teh Solo</h2>
+<a href="#menu" class="btn-order">Silahkan Memesan</a>
+</div>
+
+<div id="menu" class="menu-container">
+
+<!-- MINI -->
+<div class="menu mini">
+<img src="es teh cup mini.jpg" alt="Es Teh Mini">
+<h3>Es Teh Manis Cup Mini</h3>
+<div class="price">Rp 5.000</div>
+Jumlah:
+<input type="number" min="1" value="1" id="miniQty" onchange="hitungTotal('mini',5000)">
+<div class="total" id="miniTotal">Total: Rp 5.000</div>
+<button onclick="order('Es Teh Manis Cup Mini',5000,'miniQty')">Pesan</button>
+</div>
+
+<!-- BESAR -->
+<div class="menu besar">
+<img src="es teh cup besar.jpg" alt="Es Teh Besar">
+<h3>Es Teh Manis Cup Besar</h3>
+<div class="price">Rp 10.000</div>
+Jumlah:
+<input type="number" min="1" value="1" id="besarQty" onchange="hitungTotal('besar',10000)">
+<div class="total" id="besarTotal">Total: Rp 10.000</div>
+<button onclick="order('Es Teh Manis Cup Besar',10000,'besarQty')">Pesan</button>
+</div>
+
+<!-- LECI -->
+<div class="menu leci">
+<img src="es teh leci.jpg" alt="Es Teh Leci">
+<h3>Es Teh Leci</h3>
+<div class="price">Rp 15.000</div>
+Jumlah:
+<input type="number" min="1" value="1" id="leciQty" onchange="hitungTotal('leci',15000)">
+<div class="total" id="leciTotal">Total: Rp 15.000</div>
+<button onclick="order('Es Teh Leci',15000,'leciQty')">Pesan</button>
+</div>
+
+<!-- LEMON -->
+<div class="menu lemon">
+<img src="es teh lemon.jpg" alt="Es Teh Lemon">
+<h3>Es Teh Lemon</h3>
+<div class="price">Rp 15.000</div>
+Jumlah:
+<input type="number" min="1" value="1" id="lemonQty" onchange="hitungTotal('lemon',15000)">
+<div class="total" id="lemonTotal">Total: Rp 15.000</div>
+<button onclick="order('Es Teh Lemon',15000,'lemonQty')">Pesan</button>
+</div>
+
+<!-- HIJAU -->
+<div class="menu hijau">
+<img src="es teh hijau.jpg" alt="Es Teh hijau">
+<h3>Es Teh hijau</h3>
+<div class="price">Rp 15.000</div>
+Jumlah:
+<input type="number" min="1" value="1" id="hijauQty" onchange="hitungTotal('madu',15000)">
+<div class="total" id="hijauTotal">Total: Rp 15.000</div>
+<button onclick="order('Es Teh hijau',15000,'maduQty')">Pesan</button>
+</div>
+
+</div>
+
+<script>
+function hitungTotal(menu, harga){
+    let qty = document.getElementById(menu+"Qty").value;
+    let total = qty * harga;
+    document.getElementById(menu+"Total").innerHTML = 
+        "Total: Rp " + total.toLocaleString("id-ID");
+}
+
+function order(menu, harga, qtyId){
+    let phone = "6285891609169";
+    let qty = document.getElementById(qtyId).value;
+    let total = qty * harga;
+    let message = "Hai aku ingin memesan " + menu + 
+                  " sebanyak " + qty + 
+                  " dengan total Rp " + total.toLocaleString("id-ID");
+    let url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(message);
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>
