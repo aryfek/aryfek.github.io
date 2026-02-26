@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profil Diri - Ahmad Aryo</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: white;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+      animation: slideUp 1.2s ease;
+    }
+
+    @keyframes slideUp {
+      from {transform: translateY(40px); opacity: 0;}
+      to {transform: translateY(0); opacity: 1;}
+    }
+
+    .card {
+      background: rgba(255,255,255,0.12);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.3);
+      backdrop-filter: blur(6px);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px) scale(1.01);
+      box-shadow: 0 0 30px rgba(0,0,0,0.5);
+    }
+
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid white;
+      margin-bottom: 15px;
+      animation: pop 1s ease;
+    }
+
+    @keyframes pop {
+      0% {transform: scale(0);}
+      100% {transform: scale(1);}
+    }
+
+    h1 {
+      margin: 10px 0 5px;
+      letter-spacing: 1px;
+    }
+
+    .tagline {
+      font-style: italic;
+      opacity: 0.9;
+    }
+
+    .info {
+      margin-top: 25px;
+      text-align: left;
+    }
+
+    .info h2 {
+      border-bottom: 2px solid rgba(255,255,255,0.4);
+      padding-bottom: 5px;
+    }
+
+    .info p, .info li {
+      line-height: 1.8;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    a {
+      color: #ffeb3b;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .wa-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 16px;
+      background: #25D366;
+      color: white;
+      border-radius: 25px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .wa-btn:hover {
+      background: #1ebe5d;
+      transform: scale(1.05);
+    }
+
+    footer {
+      margin-top: 30px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="card">
+
+      <!-- FOTO PROFIL -->
+      <img src="aryo.jpg" alt="Foto Profil Ahmad Aryo">
+
+      <h1>Ahmad Aryo</h1>
+      <p class="tagline">Pelajar SMK | Calon Pro Player | Tech Enthusiast</p>
+
+      <div class="info">
+        <h2>📌 Tentang Saya</h2>
+        <p>
+          Halo! Saya adalah siswa <b>SMK MEKARWANGI</b> kelas <b>XI-MP</b> yang tertarik dengan dunia teknologi,
+          game, dan desain web.
+        </p>
+
+        <h2>🗓️ Data Pribadi</h2>
+        <p>
+          Tempat, Tanggal Lahir: Jakarta, 4 Maret 2009
+        </p>
+
+        <h2>🎯 Hobi</h2>
+        <ul>
+          <li>Main game</li>
+          <li>Ngoding</li>
+          <li>Desain</li>
+          <li>Olahraga</li>
+        </ul>
+
+        <h2>🏫 Data Singkat</h2>
+        <p>
+          Sekolah: SMK MEKARWANGI<br>
+          Kelas: XI-MP<br>
+          Alamat: Jawa Barat, Indonesia
+        </p>
+
+        <h2>📱 Kontak</h2>
+        <p>
+          Instagram: <a href="https://instagram.com/ary_fek" target="_blank">@ary_fek</a><br>
+          Email: <a href="mailto:ahmadaryomusyaffaa@gmail.com">ahmadaryomusyaffaa@gmail.com</a><br>
+          WhatsApp: 
+          <a class="wa-btn" href="https://wa.me/6285891609169?text=hai%20aku%20yang%20mengujungi%20web%20kamu" target="_blank">
+            Chat WhatsApp
+          </a>
+        </p>
+      </div>
+
+      <footer>
+        © 2026 - Website Profil Diri | Dibuat oleh Ahmad Aryo
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>
